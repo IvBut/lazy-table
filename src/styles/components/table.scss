@@ -1,0 +1,122 @@
+.table {
+  box-sizing: border-box;
+  background: #454d55;
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background-color: #292929;
+    color: white;
+  }
+
+  &-header {
+    display: flex;
+    max-width: 100%;
+    min-height: 2rem;
+    border:1px solid #454d55;
+  }
+
+  &-body {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  &-row {
+    max-width: 100%;
+    display: flex;
+    min-height: 2rem;
+    border:1px solid #454d55;
+    &:nth-child(2n+1) {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,.075);
+    }
+  }
+
+  &-cell {
+    max-width: 100%;
+    border-right: 1px solid #454d55;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    span {
+      display: block;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+
+.lds-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid lightgray;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: lightgray transparent transparent transparent;
+
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.aliment {
+  &-left {
+    align-items: flex-start;
+  }
+  &-right {
+    align-items: flex-end;
+  }
+  &-center {
+    align-items: center;
+  }
+}
